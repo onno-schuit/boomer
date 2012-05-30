@@ -50,12 +50,5 @@
              (user-fields contact)
              (submit-button "Submit"))))
 
-(defn valid? [{:keys [firstname lastname]}]
-  true)
 
-(defpage [:post "/mailer"] {:as user}
-  (if (valid? user)
-    (layout
-      [:p "Sent mail!"])
-    (render "/contact" user)))
 
