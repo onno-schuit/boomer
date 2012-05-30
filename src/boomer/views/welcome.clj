@@ -1,6 +1,7 @@
 (ns boomer.views.welcome
   (:require [boomer.views.common :as common]
-            [noir.content.getting-started])
+            [noir.content.getting-started]
+            [noir.response :as resp])
   (:use [noir.core]
         [hiccup.core]
         [hiccup.page]
@@ -47,3 +48,13 @@
     (form-to [:post "/mailer"]
              (user-fields contact)
              (submit-button "Submit"))))
+
+(defn valid? [{:keys [firstname lastname]}]
+  true)
+
+(defpage [:post "/mailer"] {:as user}
+  (if (valid? user)
+    (layout
+      [:p "Sent mail!"])
+    (render "/contact" user)))
+
