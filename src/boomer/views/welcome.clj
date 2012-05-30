@@ -7,6 +7,7 @@
         [hiccup.page]
         [hiccup.form]))
 
+
 (defpartial hello [person]
     [:p "Hello " person])
 
