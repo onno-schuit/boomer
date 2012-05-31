@@ -3,5 +3,6 @@
             :dependencies [[org.clojure/clojure "1.4.0"]
                            [noir "1.3.0-beta3"]
                            [clojurewerkz/mailer "1.0.0-alpha3"]]
-            :main boomer.server)
+            :main boomer.server
+            :resource-paths ["src/resources"])
 
